@@ -1,0 +1,118 @@
+---
+
+---
+
+<script>
+  const responsiveBtn = document.querySelector(".responsive_btn");
+  const navbar = document.querySelector(".navbar");
+  const sections = document.querySelectorAll("section");
+
+  responsiveBtn.addEventListener("click", () => {
+    navbar.classList.toggle("activo");
+    sections.forEach((section) => section.classList.toggle("blur"));
+  });
+
+  // Agrega el siguiente código para asegurarte de que la clase "activo" no esté presente inicialmente
+  document.addEventListener("DOMContentLoaded", () => {
+    navbar.classList.remove("activo");
+  });
+</script>
+
+<header>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#inicio"> Inicio</a></li>
+      <li><a href="#momentos"> Momentos</a></li>
+      <li><a href="#galeria"> Galeria</a></li>
+      <li><a href="#mensajes"> Mensajes</a></li>
+    </ul>
+  </nav>
+  <button class="responsive_btn">
+    <img src="/catIcon.png" alt="Responsive-Button" />
+  </button>
+</header>
+
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    padding: 1.5rem;
+    z-index: 1000;
+    background-color: #568558;
+  }
+
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    margin-right: 1rem;
+  }
+
+  a {
+    color: #e3d4ad;
+    text-decoration: none;
+  }
+
+  .responsive_btn {
+    display: none;
+  }
+
+  @media (width < 768px) {
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column-reverse;
+      padding-top: 1rem;
+      padding-bottom: 0;
+    }
+
+    .responsive_btn {
+      display: block;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .responsive_btn img {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    .navbar {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+    }
+
+    li {
+      margin: 0.5rem 2rem;
+      text-align: center;
+    }
+
+    .navbar.activo {
+      display: flex;
+    }
+  }
+</style>
+
+<style is:global>
+  section.blur {
+    filter: blur(5px);
+  }
+</style>
