@@ -19,6 +19,11 @@
 </script>
 
 <header>
+  <div>
+    <a href="#inicio">
+      <img src="/cat.png" alt="Icono gato" />
+    </a>
+  </div>
   <nav class="navbar">
     <ul>
       <li><a href="#inicio"> Inicio</a></li>
@@ -36,12 +41,28 @@
   header {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     position: fixed;
     width: 100%;
-    padding: 1.5rem;
     z-index: 1000;
     background-color: #568558;
+  }
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1rem;
+  }
+
+  div img {
+    width: 80%;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav {
+    margin-right: 1rem;
   }
 
   ul {
@@ -68,23 +89,26 @@
   @media (width < 768px) {
     header {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: stretch;
       flex-direction: column-reverse;
       padding-top: 1rem;
-      padding-bottom: 0;
+      padding-bottom: 0.5rem;
+    }
+
+    div {
+      display: none;
     }
 
     .responsive_btn {
-      display: block;
-      border: none;
-      padding: 0.5rem;
-      border-radius: 1rem;
-      cursor: pointer;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 1rem;
+      align-self: center;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 0.5rem;
+      cursor: pointer;
     }
 
     .responsive_btn img {
@@ -108,6 +132,9 @@
 
     .navbar.activo {
       display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
     }
   }
 </style>
