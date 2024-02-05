@@ -2,11 +2,93 @@
 
 ---
 
-<section id="inicio"></section>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const span = document.querySelector(".birthday");
+
+    setInterval(function () {
+      // Alternar entre las clases CSS para cambiar el color
+      span.classList.toggle("color1");
+    }, 800); // Cambia de color cada segundo (ajusta según sea necesario)
+  });
+</script>
+
+<section id="inicio">
+  <div class="text_container">
+    <h1>FELIZ <span class="birthday"> CUMPLEAÑOS !!</span></h1>
+    <span class="sp"> Bienvenida a tu michi web</span>
+    <p>¿Lista para vivir juntos esta michi aventura?</p>
+  </div>
+  <div class="img_container">
+    <img src="/birthdaycat.png" alt="Gato" />
+  </div>
+</section>
 
 <style>
   section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4.7rem;
     min-height: 40rem;
-    background-color: red;
+    color: #fce0a2;
+  }
+
+  .text_container {
+    margin-bottom: 5%;
+    background-color: rgba(255, 255, 255, 1);
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .birthday {
+    margin-left: 0.4rem;
+    font-size: 3rem;
+    font-weight: bold;
+    transition: color 0.5s ease-in-out;
+  }
+
+  .birthday.color1 {
+    color: #f5bed8;
+  }
+
+  .sp {
+    font-size: 1.5rem;
+  }
+  p {
+    margin-top: 1rem;
+    font-size: 2rem;
+  }
+
+  .img_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
+    width: 80%;
+  }
+
+  @media (width < 768px) {
+    section {
+      margin-top: 8rem;
+      display: flex;
+      flex-direction: column;
+      scroll-margin-top: 5rem;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .birthday {
+      font-size: 2rem;
+    }
   }
 </style>

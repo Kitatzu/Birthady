@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import "@fontsource/kosugi-maru";
+import "@fontsource/caveat-brush";
 interface Props {
   title: string;
 }
@@ -31,9 +32,11 @@ const { title } = Astro.props;
     margin: 0;
     padding: 0;
     font-size: 20px;
+    scroll-behavior: smooth;
   }
   html {
-    font-family: "Kosugi Maru", sans-serif;
+    /* font-family: "Kosugi Maru", sans-serif; */
+    font-family: "Caveat Brush", sans-serif;
     background: #568558;
   }
 
@@ -47,5 +50,11 @@ const { title } = Astro.props;
 
   section {
     width: 80%;
+  }
+
+  @media (width < 768px) {
+    section {
+      width: 90%;
+    }
   }
 </style>
