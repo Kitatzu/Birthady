@@ -384,15 +384,10 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.19.12.tgz#c57c8afbb4054a3ab8317591a0b7320360b444ae"
   integrity sha512-T1QyPSDCyMXaO3pzBkF96E8xMkiRYbUEZADd29SyPGabqxMViNoii+NcK7eWJAEoU6RZyEm5lVSIjTmcdoB9HA==
 
-"@fontsource/caveat-brush@^5.0.8":
-  version "5.0.8"
-  resolved "https://registry.yarnpkg.com/@fontsource/caveat-brush/-/caveat-brush-5.0.8.tgz#5b543dde90f9b77dddd1ab6c5d6c6c49f9af235f"
-  integrity sha512-4vr7WOIbR+HKrDtCVSyeLng9rUn5AgIWcUlOcd1i36uKNV6QXsYTvuPESIq6aAJ0NajpaRnGgxA0niQSrFmLAA==
-
-"@fontsource/kosugi-maru@^5.0.11":
-  version "5.0.11"
-  resolved "https://registry.yarnpkg.com/@fontsource/kosugi-maru/-/kosugi-maru-5.0.11.tgz#30f2d72b93d410b4f5f6fca27540437128e22428"
-  integrity sha512-grjVVvX7S5U8p6XEL1nwBq2Ne/x7/0fmTVYhTJq3xJWIMMQNaafYoWcDNZfn08GUgyC07+Mg4Xc+l9Esd3kaLA==
+"@fontsource-variable/montserrat@^5.0.17":
+  version "5.0.17"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/montserrat/-/montserrat-5.0.17.tgz#6e7b2d6a29ebf0cbd891a824698e299f8fad05e9"
+  integrity sha512-kRPFY+sLUPE4fGTkuHu6phebYTwizsbGVIvqYa2vysRLPKUxwoiy1lb9Z4Qul8qoVspXnl0b9zA5LSn0scD9vA==
 
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"

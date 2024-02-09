@@ -2,7 +2,7 @@
 
 ---
 
-<script>
+<!-- <script>
   document.addEventListener("DOMContentLoaded", function () {
     const span = document.querySelector(".birthday");
 
@@ -11,13 +11,12 @@
       span.classList.toggle("color1");
     }, 800); // Cambia de color cada segundo (ajusta según sea necesario)
   });
-</script>
-
+</script> -->
 <section id="inicio">
   <div class="text_container">
-    <h1>FELIZ <span class="birthday"> CUMPLEAÑOS !!</span></h1>
-    <span class="sp"> Bienvenida a tu michi web</span>
-    <p>¿Lista para vivir juntos esta michi aventura?</p>
+    <h1>FELIZ <span class="birthday"> CUMPLEAÑOS !!!</span></h1>
+    <span class="sp"> </span>
+    <p>Un año mas para que cumplas todos tus sueños 🌟</p>
   </div>
   <div class="img_container">
     <img src="/birthdaycat.png" alt="Gato" />
@@ -31,25 +30,37 @@
     align-items: center;
     margin-top: 4.7rem;
     min-height: 40rem;
-    color: #fce0a2;
+    color: #55493c;
   }
 
   .text_container {
     margin-bottom: 5%;
-    background-color: rgba(255, 255, 255, 1);
-    padding: 1rem;
-    border-radius: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 0.2rem;
+    margin-right: 20px;
+    border: 5px solid #e1d5bd;
   }
 
   h1 {
+    background-color: #e1d5bd;
     font-size: 2rem;
     margin-bottom: 1rem;
+    border-radius: 0.2rem;
+    padding: 0.2rem 1rem 0.1rem 0.5rem;
+    font-weight: 600;
+  }
+
+  p {
+    background-color: #e1d5bd;
+    border-radius: 0.2rem;
+    padding: 1rem;
+    text-align: left;
+    font-size: 0.2rem;
   }
 
   .birthday {
     margin-left: 0.4rem;
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 2rem;
     transition: color 0.5s ease-in-out;
   }
 
@@ -66,13 +77,15 @@
   }
 
   .img_container {
+    width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
   img {
-    width: 80%;
+    display: block;
+    width: 100%;
   }
 
   @media (width < 768px) {

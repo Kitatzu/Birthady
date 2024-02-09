@@ -1,7 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
-import "@fontsource/kosugi-maru";
-import "@fontsource/caveat-brush";
+import "@fontsource-variable/montserrat";
+
 interface Props {
   title: string;
 }
@@ -35,9 +35,8 @@ const { title } = Astro.props;
     scroll-behavior: smooth;
   }
   html {
-    /* font-family: "Kosugi Maru", sans-serif; */
-    font-family: "Caveat Brush", sans-serif;
-    background: #568558;
+    font-family: "Montserrat Variable", sans-serif;
+    background: #f4ebdc;
   }
 
   main {
