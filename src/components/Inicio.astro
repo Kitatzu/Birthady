@@ -2,22 +2,32 @@
 
 ---
 
-<!-- <script>
+<script>
   document.addEventListener("DOMContentLoaded", function () {
-    const span = document.querySelector(".birthday");
+    const cardContainer = document.getElementById("cardId");
+    const girarButton = document.getElementById("girarButton");
 
-    setInterval(function () {
-      // Alternar entre las clases CSS para cambiar el color
-      span.classList.toggle("color1");
-    }, 800); // Cambia de color cada segundo (ajusta según sea necesario)
+    girarButton.addEventListener("click", function () {
+      cardContainer.classList.toggle("flipped");
+      const textContainer = document.querySelector(".text_container");
+      textContainer.classList.toggle("hidden");
+    });
   });
-</script> -->
+</script>
+
 <section id="inicio">
-  <div class="text_container">
-    <h1>FELIZ <span class="birthday"> CUMPLEAÑOS !!!</span></h1>
-    <span class="sp"> </span>
-    <p>Un año mas para que cumplas todos tus sueños 🌟</p>
+  <div class="card_container" id="cardId">
+    <div class="text_container">
+      <h1>Hola! Hoy es un dia especial</h1>
+      <p>¿Estas lista?</p>
+      <button id="girarButton"> Vamos!</button>
+    </div>
+    <div class="photo_container hidden">
+      <span> Feliz Cumpleaños!!!</span>
+      <img src="/img.jpg" alt="Imagen nuestra" />
+    </div>
   </div>
+
   <div class="img_container">
     <img src="/birthdaycat.png" alt="Gato" />
   </div>
@@ -33,57 +43,114 @@
     color: #55493c;
   }
 
-  .text_container {
-    margin-bottom: 5%;
-    padding: 1rem 1rem 1rem 1rem;
-    border-radius: 0.2rem;
-    margin-right: 20px;
+  /*  Rotacion */
+  .card_container {
+    max-width: 30rem; /* Ajusta el ancho según sea necesario */
+    max-height: 20rem; /* Ajusta la altura según sea necesario */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+    border-radius: 2rem;
+    padding: 1rem;
     border: 5px solid #e1d5bd;
+    margin-bottom: 4rem;
+    margin-right: 2rem;
+    perspective: 2000px;
   }
 
-  h1 {
+  .text_container,
+  .photo_container {
+    backface-visibility: hidden;
+  }
+
+  .flipped {
+    transform: rotateY(180deg);
+  }
+
+  .text_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .text_container.hidden {
+    display: none;
+  }
+
+  .text_container img {
+    display: none; /* Oculta la imagen en el estado normal */
+  }
+
+  .photo_container {
+    background-color: #52483c;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
+    transform: rotateY(180deg);
+  }
+
+  .photo_container span {
+    color: #e1d5bd;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .photo_container img {
+    border-radius: 1rem;
+    display: block; /* Muestra la imagen cuando está girada */
+    width: 60%;
+  }
+
+  .text_container h1 {
     background-color: #e1d5bd;
     font-size: 2rem;
     margin-bottom: 1rem;
-    border-radius: 0.2rem;
-    padding: 0.2rem 1rem 0.1rem 0.5rem;
-    font-weight: 600;
-  }
-
-  p {
-    background-color: #e1d5bd;
-    border-radius: 0.2rem;
+    border-radius: 0.5rem;
     padding: 1rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .text_container p {
+    background-color: #e1d5bd;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
     text-align: left;
-    font-size: 0.2rem;
-  }
-
-  .birthday {
-    margin-left: 0.4rem;
-    font-size: 2rem;
-    transition: color 0.5s ease-in-out;
-  }
-
-  .birthday.color1 {
-    color: #f5bed8;
-  }
-
-  .sp {
     font-size: 1.5rem;
   }
-  p {
-    margin-top: 1rem;
-    font-size: 2rem;
+
+  .text_container button {
+    font-weight: bold;
+    color: #cac0b4;
+    border: none;
+    background-color: #52483c;
+    padding: 0.6rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: 1s ease;
+  }
+
+  .text_container button:hover {
+    color: #52483c;
+    background-color: #cac0b4;
+    scale: 1.1;
   }
 
   .img_container {
-    width: 80%;
+    width: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  img {
+  .img_container img {
     display: block;
     width: 100%;
   }
