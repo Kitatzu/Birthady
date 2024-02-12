@@ -20,16 +20,12 @@
     <div class="text_container">
       <h1>Hola! Hoy es un dia especial</h1>
       <p>¿Estas lista?</p>
-      <button id="girarButton"> Vamos!</button>
+      <button id="girarButton"> Clickeame </button> 
     </div>
     <div class="photo_container hidden">
       <span> Feliz Cumpleaños!!!</span>
-      <img src="/img.jpg" alt="Imagen nuestra" />
+      <img src="/birthdaycat.png" alt="birthdayCat">
     </div>
-  </div>
-
-  <div class="img_container">
-    <img src="/birthdaycat.png" alt="Gato" />
   </div>
 </section>
 
@@ -45,17 +41,22 @@
 
   /*  Rotacion */
   .card_container {
-    max-width: 30rem; /* Ajusta el ancho según sea necesario */
-    max-height: 20rem; /* Ajusta la altura según sea necesario */
+    width: 70%;
+    height: 23rem;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 1s ease;
     border-radius: 2rem;
     padding: 1rem;
-    border: 5px solid #e1d5bd;
+    border: 10px solid #e1d5bd;
     margin-bottom: 4rem;
     margin-right: 2rem;
     perspective: 2000px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    background-image: url("cuteCat.png"), url("cat1.png");
+    background-repeat: no-repeat;
+    background-size: 100px;
+    background-position: top left 20px, bottom right -1px;
   }
 
   .text_container,
@@ -73,6 +74,7 @@
     align-items: center;
     flex-direction: column;
     gap: 1rem;
+    margin-top: 3rem;
   }
 
   .text_container.hidden {
@@ -80,31 +82,33 @@
   }
 
   .text_container img {
-    display: none; /* Oculta la imagen en el estado normal */
+    display: none; 
   }
 
   .photo_container {
-    background-color: #52483c;
     border-radius: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     gap: 1rem;
-    padding: 1rem 1rem 1rem 1rem;
     transform: rotateY(180deg);
   }
 
   .photo_container span {
     color: #e1d5bd;
+    background-color: #52483c;
     font-size: 2rem;
     font-weight: bold;
+    border-radius: 1rem;
+    padding: 0.5rem;
   }
 
   .photo_container img {
+    background-color: #52483c;
     border-radius: 1rem;
-    display: block; /* Muestra la imagen cuando está girada */
-    width: 60%;
+    display: block; 
+    width: 30%;
   }
 
   .text_container h1 {
@@ -127,33 +131,23 @@
   }
 
   .text_container button {
+    font-family: "Montserrat Variable", sans-serif;
+    background-color: #E1D5BD; 
+    color: #52483c; 
+    border: none; 
+    border-radius: 0.3rem; 
+    font-size: 1rem; 
     font-weight: bold;
-    color: #cac0b4;
-    border: none;
-    background-color: #52483c;
-    padding: 0.6rem;
-    border-radius: 0.5rem;
+    padding: 0.5rem 0.5rem;
     cursor: pointer;
-    transition: 1s ease;
+    transition: background-color 0.5s ease, color 0.5s ease; 
   }
 
   .text_container button:hover {
-    color: #52483c;
-    background-color: #cac0b4;
-    scale: 1.1;
+    background-color: #52483c; 
+    color: #fff8e1;
   }
 
-  .img_container {
-    width: 40%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .img_container img {
-    display: block;
-    width: 100%;
-  }
 
   @media (width < 768px) {
     section {
@@ -163,12 +157,32 @@
       scroll-margin-top: 5rem;
     }
 
-    h1 {
+    .card_container {
+      width: 90%;
+      min-height: 30rem;
+      margin: 0;
+      background-size: 80px;
+    }
+
+    .text_container h1 {
+      text-align: center;
       font-size: 1.5rem;
     }
 
-    .birthday {
-      font-size: 2rem;
+    .photo_container {
+      margin-top: 5rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .photo_container span {
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .photo_container img {
+      width: 80%;
     }
   }
 </style>
