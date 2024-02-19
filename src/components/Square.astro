@@ -1,0 +1,45 @@
+---
+const { p, h1 } = Astro.props;
+---
+
+<script></script>
+
+<div class="square">
+  <h1>{h1}</h1>
+  <div class="p_container">
+    <p>{p}</p>
+  </div>
+</div>
+
+<style>
+  .square {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #e1d5bd;
+    padding: 1rem;
+    cursor: pointer;
+    transition: 0.5s ease-in-out;
+    color: #55493c;
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .square:hover {
+    background-color: #52483c;
+    color: #f4ebdc;
+  }
+
+  .p_container {
+    display: none;
+  }
+
+  @media (width < 768px) {
+    .square {
+      font-size: 0.8rem;
+    }
+  }
+</style>

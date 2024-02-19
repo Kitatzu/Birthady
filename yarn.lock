@@ -389,6 +389,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource-variable/montserrat/-/montserrat-5.0.17.tgz#6e7b2d6a29ebf0cbd891a824698e299f8fad05e9"
   integrity sha512-kRPFY+sLUPE4fGTkuHu6phebYTwizsbGVIvqYa2vysRLPKUxwoiy1lb9Z4Qul8qoVspXnl0b9zA5LSn0scD9vA==
 
+"@fontsource/birthstone-bounce@^5.0.18":
+  version "5.0.18"
+  resolved "https://registry.yarnpkg.com/@fontsource/birthstone-bounce/-/birthstone-bounce-5.0.18.tgz#30c579cb1d3c49d2d28d755b01d885c7d62b55d3"
+  integrity sha512-6I6vGqzEeceNkvyvqICZF3mPNMwEN4dyoaUGt2aLQzW5UA9x5RphR9iWtBzKvlfZ/UQGdTbVMfxITLxT72eEFg==
+
 "@jridgewell/gen-mapping@^0.3.0", "@jridgewell/gen-mapping@^0.3.2":
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/@jridgewell/gen-mapping/-/gen-mapping-0.3.3.tgz#7e02e6eb5df901aaedb08514203b096614024098"
