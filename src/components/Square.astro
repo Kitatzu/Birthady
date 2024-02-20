@@ -1,12 +1,10 @@
 ---
-const { p, h1 } = Astro.props;
+const { p, h1, id } = Astro.props;
 ---
 
-<script></script>
-
-<div class="square">
+<div class="square" id={id}>
   <h1>{h1}</h1>
-  <div class="p_container">
+  <div class="p_container hidden">
     <p>{p}</p>
   </div>
 </div>
@@ -34,6 +32,23 @@ const { p, h1 } = Astro.props;
   }
 
   .p_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 20%;
+    margin: auto;
+    height: 10%;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background-color: #f4ebdc;
+    color: #52483c;
+  }
+
+  .p_container.hidden {
     display: none;
   }
 

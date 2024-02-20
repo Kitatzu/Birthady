@@ -2,19 +2,66 @@
 import Square from "./Square.astro";
 ---
 
+<!-- <script>
+  const squares = document.querySelectorAll(".square");
+
+  squares.forEach((square) => {
+    square.addEventListener("click", () => {
+      const pContainer = square.querySelector(".p_container");
+      pContainer.classList.toggle("hidden");
+    });
+  });
+</script> -->
+<script>
+  let currentSquare = null;
+  let currentPContainer = null;
+
+  function closeContent(square) {
+    if (square.id === currentSquare.id) {
+      currentPContainer.classList.add("hidden");
+      // Elimina la línea que establece currentPContainer a null
+    }
+  }
+
+  function toggleContent(square) {
+    const newPContainer = square.querySelector(".p_container");
+
+    if (currentSquare) {
+      closeContent(currentSquare);
+      currentPContainer = null;
+    }
+
+    currentSquare = square;
+    currentPContainer = newPContainer;
+
+    currentPContainer.classList.toggle("hidden");
+  }
+
+  // Declaración de la variable squares
+  let squares = document.querySelectorAll(".square");
+
+  // Utiliza la API de reactividad de Astro para volver a adjuntar los event listeners
+  $: squares = document.querySelectorAll(".square");
+  $: squares.forEach((square) => {
+    square.addEventListener("click", () => {
+      toggleContent(square);
+    });
+  });
+</script>
+
 <section id="momentos">
   <h1 class="section_tittle">Algunos momentos especiales...</h1>
   <div class="square_container">
-    <Square h1="Persona 1" p="Hola soy un parrafo" />
-    <Square h1="Persona 2" p="Hola soy un parrafo" />
-    <Square h1="Persona 3" p="Hola soy un parrafo" />
-    <Square h1="Persona 4" p="Hola soy un parrafo" />
-    <Square h1="Persona 5" p="Hola soy un parrafo" />
-    <Square h1="Persona 6" p="Hola soy un parrafo" />
-    <Square h1="Persona 7" p="Hola soy un parrafo" />
-    <Square h1="Persona 8" p="Hola soy un parrafo" />
-    <Square h1="Persona 9" p="Hola soy un parrafo" />
-    <Square h1="Persona 10" p="Hola soy un parrafo" />
+    <Square h1="Parrafo" p="Hola soy un parrafo 1" id="1" />
+    <Square h1="Parrafo" p="Hola soy un parrafo 2" id="2" />
+    <Square h1="Parrafo" p="Hola soy un parrafo 3" id="3" />
+    <Square h1="Parrafo" p="Hola soy un parrafo 4" id="4" />
+    <Square h1="Parrafo" p="Hola soy un parrafo 5" id="5" />
+    <Square h1="Parrafo" p="Hola soy un parrafo 6" id="6" />
+    <Square h1="Parrafo" p="Hola soy un parrafo 7" id="7" />
+    <Square h1="Parrafo" p="Hola soy un parrafo 8" id="8" />
+    <Square h1="Parrafo" p="Hola soy un parrafo 9" id="9" />
+    <Square h1="Parrafo" p="Hola soy un parrafo 10" id="10" />
   </div>
 </section>
 
