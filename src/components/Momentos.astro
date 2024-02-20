@@ -2,16 +2,6 @@
 import Square from "./Square.astro";
 ---
 
-<!-- <script>
-  const squares = document.querySelectorAll(".square");
-
-  squares.forEach((square) => {
-    square.addEventListener("click", () => {
-      const pContainer = square.querySelector(".p_container");
-      pContainer.classList.toggle("hidden");
-    });
-  });
-</script> -->
 <script>
   let currentSquare = null;
   let currentPContainer = null;
@@ -28,6 +18,10 @@ import Square from "./Square.astro";
 
     if (newPContainer.classList.contains("hidden")) {
       newPContainer.classList.remove("hidden");
+      newPContainer.style.opacity = 0;
+      setTimeout(() => {
+        newPContainer.style.opacity = 1;
+      }, 10);
     } else {
       newPContainer.classList.add("hidden");
     }
@@ -55,16 +49,64 @@ import Square from "./Square.astro";
 <section id="momentos">
   <h1 class="section_tittle">Algunos momentos especiales...</h1>
   <div class="square_container">
-    <Square id="1" />
-    <Square id="2" />
-    <Square id="3" />
-    <Square id="4" />
-    <Square id="5" />
-    <Square id="6" />
-    <Square id="7" />
-    <Square id="8" />
-    <Square id="9" />
-    <Square id="10" />
+    <Square id="1" img="/cat1.png">
+      <strong> Persona 1:</strong> Hola soy un parrafo creado para probar que tan
+      bien se ve el texto
+    </Square>
+    <Square id="2" img="/cuteCat.png">
+      <strong> Persona 2:</strong> Lorem ipsum dolor sit amet consectetur adipisicing
+      elit. Provident incidunt quasi numquam, facere ipsa velit quis nihil veritatis?
+      Enim ab voluptate deleniti praesentium consequuntur libero explicabo illum
+      ducimus eum sint.
+    </Square>
+    <Square id="3" img="/cat1.png">
+      <strong> Persona 3:</strong>Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Fugiat corporis deleniti perspiciatis libero reiciendis
+      adipisci eos non. Repellendus, consectetur? In veritatis alias nam enim
+      porro veniam dolorum laborum nihil possimus.
+    </Square>
+    <Square id="4" img="/cat1.png">
+      <strong> Persona 4:</strong>Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Fugiat corporis deleniti perspiciatis libero reiciendis
+      adipisci eos non. Repellendus, consectetur? In veritatis alias nam enim
+      porro veniam dolorum laborum nihil possimus.
+    </Square>
+    <Square id="5" img="/cat1.png">
+      <strong> Persona 5:</strong>Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Fugiat corporis deleniti perspiciatis libero reiciendis
+      adipisci eos non. Repellendus, consectetur? In veritatis alias nam enim
+      porro veniam dolorum laborum nihil possimus.
+    </Square>
+    <Square id="6" img="/cat1.png">
+      <strong> Persona6:</strong>Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Fugiat corporis deleniti perspiciatis libero reiciendis
+      adipisci eos non. Repellendus, consectetur? In veritatis alias nam enim
+      porro veniam dolorum laborum nihil possimus.
+    </Square>
+    <Square id="7" img="/cat1.png">
+      <strong> Persona7:</strong>Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Fugiat corporis deleniti perspiciatis libero reiciendis
+      adipisci eos non. Repellendus, consectetur? In veritatis alias nam enim
+      porro veniam dolorum laborum nihil possimus.
+    </Square>
+    <Square id="8" img="/cat1.png">
+      <strong> Persona8:</strong>Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Fugiat corporis deleniti perspiciatis libero reiciendis
+      adipisci eos non. Repellendus, consectetur? In veritatis alias nam enim
+      porro veniam dolorum laborum nihil possimus.
+    </Square>
+    <Square id="9" img="/cat1.png">
+      <strong> Persona9</strong>Lorem ipsum dolor sit amet consectetur
+      adipisicing elit. Fugiat corporis deleniti perspiciatis libero reiciendis
+      adipisci eos non. Repellendus, consectetur? In veritatis alias nam enim
+      porro veniam dolorum laborum nihil possimus.
+    </Square>
+    <Square id="10" img="/cat1.png">
+      <strong> Persona10:</strong> Lorem ipsum dolor, sit amet consectetur adipisicing
+      elit. Consequuntur aliquam eos dolorum iure culpa vel, fugit laudantium voluptas
+      amet sint tempore sunt mollitia rem quibusdam architecto repudiandae error
+      natus quos.
+    </Square>
   </div>
 </section>
 
@@ -91,9 +133,13 @@ import Square from "./Square.astro";
     gap: 5rem;
   }
 
+  strong {
+    font-size: 0.9rem;
+  }
+
   @media (width < 768px) {
     section {
-      margin-bottom: 10rem;
+      margin-bottom: 20rem;
     }
 
     .section_tittle {
@@ -103,6 +149,10 @@ import Square from "./Square.astro";
     .square_container {
       grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
+    }
+
+    strong {
+      font-size: 0.8rem;
     }
   }
 </style>

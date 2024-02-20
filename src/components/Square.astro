@@ -1,12 +1,14 @@
 ---
-const { p, h1, id } = Astro.props;
+const { h1, id, img, alt } = Astro.props;
 ---
 
 <div class="square" id={id}>
-  <h1>{h1}</h1>
+  <div class="img_container">
+    <img src={img} alt={alt} />
+  </div>
   <div class="p_container hidden">
     <p>
-      {p}
+      <slot />
     </p>
   </div>
 </div>
@@ -33,14 +35,28 @@ const { p, h1, id } = Astro.props;
     color: #f4ebdc;
   }
 
+  .img_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .img_container img {
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
+
   .p_container {
-    /* background-color: #f4ebdc; */
-    background-color: red;
+    background-color: white;
     color: #52483c;
     position: absolute;
     z-index: 10000;
-    max-width: 500px;
-    display: block;
+    max-width: 300px;
+    border: 1px solid #52483c;
+    border-radius: 1rem;
+    padding: 1rem;
+    transition: opacity 0.7s ease-in-out;
   }
 
   .p_container.hidden {
@@ -48,12 +64,22 @@ const { p, h1, id } = Astro.props;
   }
 
   .p_container p {
-    text-align: center;
-    display: block;
+    font-size: 0.9rem;
+    text-align: left;
+    line-height: 1.5rem;
+    letter-spacing: 0.1rem;
   }
 
   @media (width < 768px) {
-    .square {
+    .p_container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      max-width: 250px;
+    }
+
+    .p_container p {
       font-size: 0.8rem;
     }
   }
