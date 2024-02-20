@@ -26,15 +26,18 @@ import Square from "./Square.astro";
   function toggleContent(square) {
     const newPContainer = square.querySelector(".p_container");
 
+    if (newPContainer.classList.contains("hidden")) {
+      newPContainer.classList.remove("hidden");
+    } else {
+      newPContainer.classList.add("hidden");
+    }
+
     if (currentSquare) {
       closeContent(currentSquare);
-      currentPContainer = null;
     }
 
     currentSquare = square;
     currentPContainer = newPContainer;
-
-    currentPContainer.classList.toggle("hidden");
   }
 
   // Declaración de la variable squares
@@ -52,16 +55,16 @@ import Square from "./Square.astro";
 <section id="momentos">
   <h1 class="section_tittle">Algunos momentos especiales...</h1>
   <div class="square_container">
-    <Square h1="Parrafo" p="Hola soy un parrafo 1" id="1" />
-    <Square h1="Parrafo" p="Hola soy un parrafo 2" id="2" />
-    <Square h1="Parrafo" p="Hola soy un parrafo 3" id="3" />
-    <Square h1="Parrafo" p="Hola soy un parrafo 4" id="4" />
-    <Square h1="Parrafo" p="Hola soy un parrafo 5" id="5" />
-    <Square h1="Parrafo" p="Hola soy un parrafo 6" id="6" />
-    <Square h1="Parrafo" p="Hola soy un parrafo 7" id="7" />
-    <Square h1="Parrafo" p="Hola soy un parrafo 8" id="8" />
-    <Square h1="Parrafo" p="Hola soy un parrafo 9" id="9" />
-    <Square h1="Parrafo" p="Hola soy un parrafo 10" id="10" />
+    <Square id="1" />
+    <Square id="2" />
+    <Square id="3" />
+    <Square id="4" />
+    <Square id="5" />
+    <Square id="6" />
+    <Square id="7" />
+    <Square id="8" />
+    <Square id="9" />
+    <Square id="10" />
   </div>
 </section>
 
