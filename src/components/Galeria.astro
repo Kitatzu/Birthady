@@ -2,12 +2,70 @@
 
 ---
 
-<section id="galeria"></section>
+<script type="module">
+  import Swiper from "https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs";
+
+  const swiper = new Swiper(".swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 15,
+      stretch: 0,
+      depth: 300,
+      modifier: 1,
+      slidesShadow: true,
+    },
+    loop: true,
+  });
+</script>
+
+<section id="galeria">
+  <div class="container">
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide"><img src="/cat1.png" alt="alt" /></div>
+        <div class="swiper-slide"><img src="/cat1.png" alt="alt" /></div>
+        <div class="swiper-slide"><img src="/cuteCat.png" alt="alt" /></div>
+        <div class="swiper-slide"><img src="/cuteCat.png" alt="alt" /></div>
+        <div class="swiper-slide"><img src="/cuteCat.png" alt="alt" /></div>
+        <div class="swiper-slide"><img src="/cuteCat.png" alt="alt" /></div>
+        <div class="swiper-slide"><img src="/cuteCat.png" alt="alt" /></div>
+        <div class="swiper-slide"><img src="/cuteCat.png" alt="alt" /></div>
+        <div class="swiper-slide"><img src="/cuteCat.png" alt="alt" /></div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <style>
   section {
-    filter: blur(10px);
     height: 100vh;
-    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .swiper {
+    width: 100%;
+  }
+
+  .swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: 400px;
+    height: 500px;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
   }
 </style>
