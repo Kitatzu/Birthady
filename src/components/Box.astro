@@ -1,0 +1,30 @@
+---
+const { h1, class: className, ...rest } = Astro.props;
+---
+
+<div class={className} {...rest}>
+  <h1>{h1}</h1>
+  <p><slot /></p>
+</div>
+
+<style>
+  div {
+    background-color: aliceblue;
+    border: 1px solid #e1d5bd;
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+    color: #55493c;
+    transition: all 0.8s;
+  }
+
+  div:hover {
+    transform: scale(1.1);
+    background-color: #55493c;
+    color: #f4ebdc;
+  }
+
+  h1 {
+    margin-bottom: 0.5rem;
+  }
+</style>
