@@ -11,8 +11,11 @@
   },
   "dependencies": {
     "@fontsource-variable/montserrat": "^5.0.17",
-    "@fontsource/birthstone-bounce": "^5.0.18",
+    "@fontsource/yomogi": "^5.0.17",
+    "add": "^2.0.6",
     "astro": "^4.3.2",
-    "swiper": "^11.0.6"
+    "canvas-confetti": "^1.9.2",
+    "swiper": "^11.0.6",
+    "yarn": "^1.22.21"
   }
 }

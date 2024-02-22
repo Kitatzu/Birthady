@@ -112,8 +112,8 @@ import Square from "./Square.astro";
 
 <style>
   section {
-    filter: blur(15px);
     height: 100vh;
+    margin-bottom: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -124,7 +124,18 @@ import Square from "./Square.astro";
   }
 
   .section_tittle {
+    position: relative;
     font-weight: bold;
+  }
+
+  h1::after {
+    position: absolute;
+    content: "";
+    background-color: #55493c;
+    left: 20px;
+    top: 30px;
+    height: 2px;
+    width: 80%;
   }
 
   .square_container {

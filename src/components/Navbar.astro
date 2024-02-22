@@ -39,7 +39,6 @@
 
 <style>
   header {
-    filter: blur(15px);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -75,6 +74,22 @@
 
   li {
     margin-right: 1rem;
+    transition: ease-in-out 0.8s;
+  }
+
+  li:hover {
+    transform: scale(1.1) translateY(-10px);
+  }
+
+  @keyframes square-line {
+    from {
+      top: 0;
+      left: 0;
+    }
+    to {
+      top: calc(100% - 5px); /* Ajusta el ancho de la línea */
+      left: calc(100% - 5px); /* Ajusta el ancho de la línea */
+    }
   }
 
   a {
