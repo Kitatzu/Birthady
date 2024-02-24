@@ -1,10 +1,10 @@
 ---
-const { h1, id, img, alt } = Astro.props;
+const { id, img, alt, height } = Astro.props;
 ---
 
 <div class="square" id={id}>
   <div class="img_container">
-    <img src={img} alt={alt} />
+    <img src={img} alt={alt} height={height} />
   </div>
   <div class="p_container hidden">
     <p>
@@ -43,6 +43,7 @@ const { h1, id, img, alt } = Astro.props;
   }
 
   .img_container img {
+    border-radius: 5%;
     width: 100%;
     object-fit: contain;
   }
